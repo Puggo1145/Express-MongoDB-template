@@ -13,14 +13,14 @@ controller - 1. authController 2. errorController 3. userController
 model - userModel (A template that can help you build schemas and models quicker)
 routes - userRouter (A basic use of express router)
 
-### utilities
+### 3. utilities
 1. apiFeatures - a basic api function includes filter / sort / limit fields / paginate
 2. appErrorClass - an error class better suits express app which extends from the original Error class
 3. bodyChecker -  check if the provided body has any missing fields
 4. bodyFilter - filter fields from body
 5. idChecker - check if a query id has a correct format and its existence
 
-### Final
+## Final
 This is not a standard or a generic scaffold. 
 This is not a standard or a generic scaffold. 
 This is not a standard or a generic scaffold. 
