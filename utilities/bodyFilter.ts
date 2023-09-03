@@ -13,9 +13,6 @@ export const bodyFilter = (allowedFields: string[]): RequestHandler => {
         // 空 body 检查
         if (JSON.stringify(newObj) === '{}') return next(new AppError("please provide valid data", 400));
 
-        // form-data：photo 检查
-        if (req.file) newObj.photo = req.file.filename
-        
         req.body = newObj; // 将过滤后的对象分配给 body
 
         next();

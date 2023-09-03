@@ -18,8 +18,8 @@ const multerStorage = multer.diskStorage({
     }
 })
 
-const multerFilter = (req: Express.Request, file: Express.Multer.File , cb: FileFilterCallback) => {
-    if ( file.mimetype.startsWith('image') ) {
+const multerFilter = (req: Express.Request, file: Express.Multer.File, cb: FileFilterCallback) => {
+    if (file.mimetype.startsWith('image')) {
         cb(null, true);
     } else {
         //@ts-ignore
@@ -28,10 +28,10 @@ const multerFilter = (req: Express.Request, file: Express.Multer.File , cb: File
 };
 
 // 创建 multer
-const upload = multer({ 
+const upload = multer({
     storage: multerStorage,
     fileFilter: multerFilter
- });
+});
 
 export const uploadUserPhoto = upload.single('photo');
 
@@ -52,6 +52,9 @@ interface filteredObjType {
 
 export const updateMe: RequestHandler = async (req, res, next) => {
     try {
+        // form-data：photo 检查
+        if (req.file) req.body.photo = req.file.filename;
+
         const updatedUser = await User.findByIdAndUpdate(res.locals.id, req.body, {
             new: true,
             runValidators: true
