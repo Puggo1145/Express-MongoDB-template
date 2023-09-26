@@ -1,6 +1,6 @@
-# Express-MongoDB-Scaffold
+# Express-MongoDB-template
 
-This is a Express-MongoDB scaffold for personal use originally. Now I share it with you so that it may help you develop your own App.
+This is a Express-MongoDB template for personal use originally. Now I share it with you so that it may help you develop your own App.
 
 ## Basic Feauture
 
